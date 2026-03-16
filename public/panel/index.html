@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Panel</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #f4f4f4; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>Waiting Turns</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Turn Number</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="turnList">
+            <!-- JavaScript will populate the queue here -->
+        </tbody>
+    </table>
+    <script>
+        // Sample queue data
+        const queue = [
+            { number: 1, status: 'Waiting' },
+            { number: 2, status: 'Waiting' },
+            { number: 3, status: 'Attended' },
+        ];
+
+        function updateQueue() {
+            const turnList = document.getElementById('turnList');
+            turnList.innerHTML = '';
+            queue.forEach(turn => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${turn.number}</td>
+                    <td>${turn.status}</td>
+                    <td>
+                        <button onclick="callTurn(${turn.number})">Call</button>
+                        <button onclick="repeatTurn(${turn.number})">Repeat</button>
+                        <button onclick="markAttended(${turn.number})">Mark Attended</button>
+                        <button onclick="transferTurn(${turn.number})">Transfer</button>
+                    </td>
+                `;
+                turnList.appendChild(row);
+            });
+        }
+
+        function callTurn(turnNumber) { /* Call logic */ updateQueue(); }
+        function repeatTurn(turnNumber) { /* Repeat logic */ updateQueue(); }
+        function markAttended(turnNumber) { /* Mark Attended logic */ updateQueue(); }
+        function transferTurn(turnNumber) { /* Transfer logic */ updateQueue(); }
+
+        updateQueue();
+    </script>
+</body>
+</html>
