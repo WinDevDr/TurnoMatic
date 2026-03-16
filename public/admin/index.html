@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Hospital Configuration</h2>
+            <form action="/submit-config" method="POST">
+                <div>
+                    <label for="logo">Hospital Logo:</label>
+                    <input type="file" id="logo" name="logo" required>
+                </div>
+                <div>
+                    <label for="colors">Colors:</label>
+                    <input type="color" id="colors" name="colors" required>
+                </div>
+                <div>
+                    <label for="video">YouTube Video URL:</label>
+                    <input type="url" id="video" name="video" required>
+                </div>
+                <div>
+                    <label for="areas">Areas:</label>
+                    <input type="text" id="areas" name="areas" required placeholder="Enter areas separated by commas">
+                </div>
+                <div>
+                    <label for="windows">Windows:</label>
+                    <input type="text" id="windows" name="windows" required placeholder="Enter windows configuration">
+                </div>
+                <div>
+                    <label for="messages">Messages:</label>
+                    <textarea id="messages" name="messages" required></textarea>
+                </div>
+                <button type="submit">Save Configuration</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>© 2026 Hospital Administration</p>
+    </footer>
+</body>
+</html>
