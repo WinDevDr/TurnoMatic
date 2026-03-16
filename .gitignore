@@ -1,0 +1,13 @@
+# Node.js
+node_modules/
+
+# Environment Variables
+.env
+
+# Common ignores
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+*.lock
