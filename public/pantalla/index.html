@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Display Screen</title>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+      // Text-to-Speech Announcement
+      function announce(turn, area, windowNumber) {
+          const announcement = `Current Turn: ${turn}, Area: ${area}, Window Number: ${windowNumber}`;
+          const utterance = new SpeechSynthesisUtterance(announcement);
+          window.speechSynthesis.speak(utterance);
+      }
+
+      // Function to simulate current turn display
+      function displayCurrentTurn() {
+          const turn = '1234'; // example turn
+          const area = 'Main Area'; // example area
+          const windowNumber = '1'; // example window number
+          announce(turn, area, windowNumber);
+
+          document.getElementById('display').innerText = `Turn: ${turn}, Area: ${area}, Window Number: ${windowNumber}`;
+      }
+
+      // YouTube Video Setup
+      function onYouTubeIframeAPIReady() {
+          const player = new YT.Player('player', {
+              height: '390',
+              width: '640',
+              videoId: 'YOUR_VIDEO_ID', // replace with your video ID
+              events: {
+                  'onReady': function(event) {
+                      event.target.playVideo();
+                  }
+              }
+          });
+      }
+
+      window.onload = function() {
+          displayCurrentTurn();
+      };
+    </script>
+</head>
+<body>
+    <div id="display" style="font-size: 24px; font-weight: bold;"></div>
+    <div id="player"></div>
+</body>
+</html>
