@@ -1,27 +1,44 @@
 const express = require('express');
 const http = require('http');
 const socketIo = require('socket.io');
-const sqlite3 = require('sqlite3').verbose();
+const path = require('path');
 
 const app = express();
 const server = http.createServer(app);
 const io = socketIo(server);
 
-// Initialize SQLite database
-const db = new sqlite3.Database('./database.db', (err) => {
-    if (err) {
-        console.error('Error opening database ' + err.message);
-    } else {
-        console.log('Connected to the SQLite database.');
-    }
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Express routes
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
+app.get('/kiosco', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'kiosco.html'));
 });
 
+app.get('/panel', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'panel.html'));
+});
+
+app.get('/pantalla', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'pantalla.html'));
+});
+
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
+app.get('/stats', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'stats.html'));
+});
+
+// Socket.io configuration
 io.on('connection', (socket) => {
     console.log('A user connected');
+    // Handle events
     socket.on('disconnect', () => {
         console.log('User disconnected');
     });
@@ -30,15 +47,4 @@ io.on('connection', (socket) => {
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-});
-
-// Close the database connection
-process.on('exit', () => {
-    db.close((err) => {
-        if (err) {
-            console.error('Error closing the database ' + err.message);
-        } else {
-            console.log('Closed the database connection.');
-        }
-    });
 });
