@@ -6,6 +6,7 @@ import DashboardHome from './pages/dashboard/DashboardHome.jsx'
 import UsuariosPage from './pages/dashboard/UsuariosPage.jsx'
 import SucursalesPage from './pages/dashboard/SucursalesPage.jsx'
 import TurnosPage from './pages/dashboard/TurnosPage.jsx'
+import PublicidadPage from './pages/dashboard/PublicidadPage.jsx'
 
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
@@ -28,6 +29,7 @@ export default function App() {
         <Route path="usuarios" element={<UsuariosPage />} />
         <Route path="sucursales" element={<SucursalesPage />} />
         <Route path="turnos" element={<TurnosPage />} />
+        <Route path="publicidad" element={<PublicidadPage />} />
       </Route>
       <Route path="/" element={<Navigate to="/dashboard" replace />} />
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
