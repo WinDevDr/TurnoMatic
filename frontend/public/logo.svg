@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 80" role="img" aria-label="Analisa Laboratorio Clínico">
+  <!-- Microscopio / ícono de laboratorio -->
+  <g transform="translate(8,8)">
+    <!-- Base del microscopio -->
+    <rect x="14" y="52" width="28" height="5" rx="2.5" fill="#ea6c00"/>
+    <!-- Columna -->
+    <rect x="25" y="22" width="6" height="30" rx="3" fill="#ea6c00"/>
+    <!-- Brazo horizontal -->
+    <rect x="18" y="22" width="20" height="5" rx="2.5" fill="#ea6c00"/>
+    <!-- Ocular -->
+    <rect x="27" y="8" width="5" height="16" rx="2.5" fill="#ea6c00"/>
+    <!-- Objetivo (lente) -->
+    <ellipse cx="21" cy="37" rx="5" ry="7" fill="none" stroke="#ea6c00" stroke-width="2.5"/>
+    <!-- Platina -->
+    <rect x="15" y="42" width="18" height="3" rx="1.5" fill="#c2560a"/>
+    <!-- Círculo decorativo (campo de visión) -->
+    <circle cx="21" cy="37" r="3" fill="#fed7aa"/>
+  </g>
+
+  <!-- Texto: Analisa -->
+  <text x="68" y="38" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#ea6c00" letter-spacing="-0.5">Analisa</text>
+
+  <!-- Línea divisora naranja -->
+  <rect x="68" y="44" width="130" height="2.5" rx="1.25" fill="#fb923c"/>
+
+  <!-- Texto: Laboratorio Clínico -->
+  <text x="68" y="62" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="500" fill="#7c2d12" letter-spacing="0.5">Laboratorio Clínico</text>
+</svg>

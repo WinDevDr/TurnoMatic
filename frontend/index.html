@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TurnoMatic – Analisa Laboratorio Clínico</title>
+    <script>
+      // Restore path encoded by 404.html for GitHub Pages SPA routing
+      (function () {
+        var p = window.location.search.match(/[?&]p=([^&]*)/);
+        if (p) {
+          var raw = decodeURIComponent(p[1]);
+          var i = raw.indexOf('&');
+          var routePath = i < 0 ? raw : raw.slice(0, i);
+          var qs = i < 0 ? '' : '?' + raw.slice(i + 1);
+          window.history.replaceState(null, null, '/TurnoMatic/' + routePath + qs + window.location.hash);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

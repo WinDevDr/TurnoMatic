@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TurnoMatic</title>
+    <script>
+      // Single-Page Apps on GitHub Pages — redirect trick
+      // Strip the base path (/TurnoMatic) and encode only the app route into ?p=
+      var l = window.location;
+      var baseParts = l.pathname.split('/').slice(0, 2); // ['', 'TurnoMatic']
+      var routePath = l.pathname.split('/').slice(2).join('/'); // e.g. 'dashboard/turnos'
+      var qs = routePath + (l.search ? '&' + l.search.slice(1) : '');
+      l.replace(
+        l.protocol +
+          '//' +
+          l.hostname +
+          (l.port ? ':' + l.port : '') +
+          baseParts.join('/') +
+          '/?p=' +
+          encodeURIComponent(qs) +
+          l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
