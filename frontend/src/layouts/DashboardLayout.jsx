@@ -199,7 +199,7 @@ export default function DashboardLayout() {
               </div>
               <div className="hidden sm:block text-right">
                 <p className="text-sm font-semibold text-gray-800 leading-tight">{user?.name}</p>
-                <p className="text-xs text-gray-500 capitalize">{user?.role}</p>
+                <p className="text-xs text-gray-500">{user?.role}</p>
               </div>
               <svg className="w-4 h-4 text-gray-400 hidden sm:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />

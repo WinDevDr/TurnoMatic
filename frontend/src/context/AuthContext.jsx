@@ -12,10 +12,10 @@ export function AuthProvider({ children }) {
     // Stub: replace with real API call
     const mockUser = {
       id: 1,
-      name: 'Administrador',
+      name: 'Winder Lora Rosario',
       email: credentials.email,
-      role: 'admin',
-      sucursal: 'Sede Central',
+      role: 'Administrador',
+      sucursal: 'Analisa Piantini',
     }
     setUser(mockUser)
     localStorage.setItem('turnomatic_user', JSON.stringify(mockUser))
