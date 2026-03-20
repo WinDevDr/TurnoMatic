@@ -11,3 +11,7 @@ Thumbs.db
 .vscode/
 *.log
 *.lock
+
+# Frontend build output
+frontend/dist/
+frontend/.vite/
